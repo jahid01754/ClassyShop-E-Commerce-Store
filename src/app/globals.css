@@ -3,24 +3,40 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #ff5252;
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.link:hover {
+  color: var(--primary);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-montserrat: var(--font-montserrat);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+header .top-strip {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat) Arial, Helvetica, sans-serif;
 }
