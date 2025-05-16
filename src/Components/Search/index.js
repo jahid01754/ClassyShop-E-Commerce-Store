@@ -1,4 +1,5 @@
 import Button from "@mui/material/Button";
+import { IoMdSearch } from "react-icons/io";
 
 export default function Search() {
   return (
@@ -10,8 +11,8 @@ export default function Search() {
           className="w-[100%] h-[35px] focus:outline-none p-2 text-[15px] placeholder:text-gray-400"
         />
 
-        <Button variant="contained" className="absolute -top-9.5 -right-5">
-          Contained
+        <Button className="!absolute top-[8px] right-[5px] z-50 !w-[35px] !min-w-[35px] !h-[35px] !rounded-full !text-black">
+          <IoMdSearch className="text-2xl text-gray-400" />
         </Button>
       </div>
     </>
