@@ -58,7 +58,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="header py-3">
+        <div className="header py-4 border-b-[1px]  border-gray-200">
           <div className="container flex  items-center justify-between gap-3">
             <div className="col1 w-[25%] flex items-center justify-start">
               <Link href="/Home">
