@@ -10,6 +10,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { GoGitCompare } from "react-icons/go";
 import { FaRegHeart } from "react-icons/fa";
 import Tooltip from "@mui/material/Tooltip";
+import Navigation from "./Navigation";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -23,7 +24,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 export default function Header() {
   return (
     <>
-      <header>
+      <header className="bg-white">
         <div className="top-strip py-2 border-t-[1px] border-b-[1px] border-gray-200">
           <div className="container">
             <div className="flex items-center justify-between">
@@ -61,7 +62,7 @@ export default function Header() {
         <div className="header py-4 border-b-[1px]  border-gray-200">
           <div className="container flex  items-center justify-between gap-3">
             <div className="col1 w-[25%] flex items-center justify-start">
-              <Link href="/Home">
+              <Link href="/">
                 <Image
                   src="/shop_logo.jpg"
                   alt="Logo"
@@ -127,6 +128,8 @@ export default function Header() {
             </div>
           </div>
         </div>
+
+        <Navigation />
       </header>
     </>
   );
