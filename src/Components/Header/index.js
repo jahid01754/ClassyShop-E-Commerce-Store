@@ -1,6 +1,24 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Search from "../Search";
+
+import Badge, { BadgeProps } from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { GoGitCompare } from "react-icons/go";
+import { FaRegHeart } from "react-icons/fa";
+import Tooltip from "@mui/material/Tooltip";
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    right: -3,
+    top: 13,
+    border: `2px solid ${(theme.vars ?? theme).palette.background.paper}`,
+    padding: "0 4px",
+  },
+}));
 
 export default function Header() {
   return (
@@ -42,21 +60,71 @@ export default function Header() {
 
         <div className="header py-3">
           <div className="container flex  items-center justify-between gap-3">
-            <div className="col1 w-[25%]">
+            <div className="col1 w-[25%] flex items-center justify-start">
               <Link href="/Home">
                 <Image
-                  src="/logo.jpg"
+                  src="/shop_logo.jpg"
                   alt="Logo"
-                  height={100}
-                  width={100}
+                  height={1000}
+                  width={1000}
                   className="w-full h-auto"
                 />
               </Link>
             </div>
-            <div className="col2 w-[45%]">
+
+            <div className="col2 w-[45%] flex items-center justify-center">
               <Search />
             </div>
-            <div className="col3 w-[30%]"></div>
+
+            <div className="col3 w-[30%] flex items-center justify-end ">
+              <ul className="flex  items-center gap-3">
+                <li className="list-none">
+                  <Link
+                    href="/login"
+                    className="link transition duration-200 text-[15px] font-[500]"
+                  >
+                    login
+                  </Link>{" "}
+                  | &nbsp;
+                  <Link
+                    href="/register"
+                    className="link transition duration-200 text-[15px] font-[500]"
+                  >
+                    Register
+                  </Link>
+                </li>
+
+                <li>
+                  <Tooltip title="Compare">
+                    <IconButton aria-label="cart">
+                      <StyledBadge badgeContent={4} color="secondary">
+                        <GoGitCompare />
+                      </StyledBadge>
+                    </IconButton>
+                  </Tooltip>
+                </li>
+
+                <li>
+                  <Tooltip title="Wish List">
+                    <IconButton aria-label="cart">
+                      <StyledBadge badgeContent={4} color="secondary">
+                        <FaRegHeart />
+                      </StyledBadge>
+                    </IconButton>
+                  </Tooltip>
+                </li>
+
+                <li>
+                  <Tooltip title="Cart">
+                    <IconButton aria-label="cart">
+                      <StyledBadge badgeContent={4} color="secondary">
+                        <MdOutlineShoppingCart />
+                      </StyledBadge>
+                    </IconButton>
+                  </Tooltip>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </header>
