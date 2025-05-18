@@ -24,7 +24,13 @@
 .nav li:hover .submenu {
   opacity: 1 !important;
   visibility: inherit;
+  top: 100%;
 }
+
+.nav li .submenu .link:hover button {
+  color: #ff5252 !important;
+}
+
 .nav li .submenu li .submenu {
   top: 0px !important;
   left: 120% !important;
@@ -35,6 +41,12 @@
   opacity: 1 !important;
 }
 
+.nav li .submenu li .submenu button {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+.nav li .submenu li .submenu button {
+  color: #ff5252 !important;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

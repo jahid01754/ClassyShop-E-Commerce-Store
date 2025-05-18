@@ -20,6 +20,7 @@ export default function Navigation() {
     <>
       <nav className="py-2">
         <div className="container flex items-center gap-8">
+          {/* Side Bar panel section */}
           <div className="col_1 w-[20%]">
             <Button
               className=" gap-4 w-full !capitalize !font-semibold !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200"
@@ -31,170 +32,206 @@ export default function Navigation() {
             </Button>
           </div>
 
+          {/* Drop down Nav bar section */}
           <div className="col_2 w-[60%]">
             <ul className="flex items-center gap-5 nav">
               <li className="list-none">
-                <Link href="/">
-                  <Button className=" !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize">
-                    Home
-                  </Button>
-                </Link>
+                <Button className=" !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize">
+                  Home
+                </Button>
               </li>
 
               <li className="list-none relative">
-                <Link href="/">
-                  <Button className="link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize">
-                    Fashion
-                  </Button>
-                </Link>
+                <Button
+                  className="link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize"
+                  component={Link}
+                  href="/"
+                >
+                  Fashion
+                </Button>
 
                 <div className="submenu absolute top-[120%] left-[0%] min-w-[200px] bg-white shadow-md opacity-0 transition-all">
                   <ul>
                     <li className="list-none w-full relative">
-                      <Link href="/" className="w-full">
-                        <Button className=" !text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none">
-                          Men
-                        </Button>
+                      <Button
+                        className=" !text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                        component={Link}
+                        href="/"
+                      >
+                        Men
+                      </Button>
 
-                        <div className="submenu absolute top-[0%] left-[100%] min-w-[200px] bg-white shadow-md opacity-0 transition-all">
-                          <ul>
-                            <li className="list-none w-full ">
-                              <Link href="/" className="w-full">
-                                <Button className=" !text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none">
-                                  Men
-                                </Button>
-                              </Link>
-                            </li>
+                      <div className="submenu absolute top-[0%] left-[100%] min-w-[200px] bg-white shadow-md opacity-0 transition-all">
+                        <ul>
+                          <li className="list-none w-full ">
+                            <Button
+                              className=" !text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                              component={Link}
+                              href="/"
+                            >
+                              T-Shirt
+                            </Button>
+                          </li>
 
-                            <li className="list-none w-full">
-                              <Link href="/" className="w-full">
-                                <Button className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none">
-                                  Women
-                                </Button>
-                              </Link>
-                            </li>
+                          <li className="list-none w-full">
+                            <Button
+                              className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                              component={Link}
+                              href="/"
+                            >
+                              Jeans
+                            </Button>
+                          </li>
 
-                            <li className="list-none w-full">
-                              <Link href="/" className="w-full">
-                                <Button className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none">
-                                  Kids
-                                </Button>
-                              </Link>
-                            </li>
+                          <li className="list-none w-full">
+                            <Button
+                              className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                              component={Link}
+                              href="/"
+                            >
+                              FootWear
+                            </Button>
+                          </li>
 
-                            <li className="list-none w-full">
-                              <Link href="/" className="w-full">
-                                <Button className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none">
-                                  Girls
-                                </Button>
-                              </Link>
-                            </li>
+                          <li className="list-none w-full">
+                            <Button
+                              className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                              component={Link}
+                              href="/"
+                            >
+                              Watch
+                            </Button>
+                          </li>
 
-                            <li className="list-none w-full">
-                              <Link href="/" className="w-full">
-                                <Button className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none">
-                                  Boys
-                                </Button>
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </Link>
+                          <li className="list-none w-full">
+                            <Button
+                              className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                              component={Link}
+                              href="/"
+                            >
+                              Pants
+                            </Button>
+                          </li>
+                        </ul>
+                      </div>
                     </li>
 
                     <li className="list-none w-full">
-                      <Link href="/" className="w-full">
-                        <Button className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none">
-                          Women
-                        </Button>
-                      </Link>
+                      <Button
+                        className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                        component={Link}
+                        href="/"
+                      >
+                        Women
+                      </Button>
                     </li>
 
                     <li className="list-none w-full">
-                      <Link href="/" className="w-full">
-                        <Button className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none">
-                          Kids
-                        </Button>
-                      </Link>
+                      <Button
+                        className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                        component={Link}
+                        href="/"
+                      >
+                        Kids
+                      </Button>
                     </li>
 
                     <li className="list-none w-full">
-                      <Link href="/" className="w-full">
-                        <Button className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none">
-                          Girls
-                        </Button>
-                      </Link>
+                      <Button
+                        className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                        component={Link}
+                        href="/"
+                      >
+                        Girls
+                      </Button>
                     </li>
 
                     <li className="list-none w-full">
-                      <Link href="/" className="w-full">
-                        <Button className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none">
-                          Boys
-                        </Button>
-                      </Link>
+                      <Button
+                        className="!text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                        component={Link}
+                        href="/"
+                      >
+                        Boys
+                      </Button>
                     </li>
                   </ul>
                 </div>
               </li>
 
               <li className="list-none">
-                <Link href="/">
-                  <Button className="link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize">
-                    Electronics
-                  </Button>
-                </Link>
+                <Button
+                  className="link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize"
+                  component={Link}
+                  href="/"
+                >
+                  Electronics
+                </Button>
               </li>
 
               <li className="list-none">
-                <Link href="/">
-                  <Button className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize">
-                    Bags
-                  </Button>
-                </Link>
+                <Button
+                  className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize"
+                  component={Link}
+                  href="/"
+                >
+                  Bags
+                </Button>
               </li>
 
               <li className="list-none">
-                <Link href="/">
-                  <Button className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize">
-                    Footwear
-                  </Button>
-                </Link>
+                <Button
+                  className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize"
+                  component={Link}
+                  href="/"
+                >
+                  Footwear
+                </Button>
               </li>
 
               <li className="list-none">
-                <Link href="/">
-                  <Button className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize">
-                    Groceries
-                  </Button>
-                </Link>
+                <Button
+                  className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize"
+                  component={Link}
+                  href="/"
+                >
+                  Groceries
+                </Button>
               </li>
 
               <li className="list-none">
-                <Link href="/">
-                  <Button className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize">
-                    Beauty
-                  </Button>
-                </Link>
+                <Button
+                  className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize"
+                  component={Link}
+                  href="/"
+                >
+                  Beauty
+                </Button>
               </li>
 
               <li className="list-none">
-                <Link href="/">
-                  <Button className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize">
-                    Wellness
-                  </Button>
-                </Link>
+                <Button
+                  className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize"
+                  component={Link}
+                  href="/"
+                >
+                  Wellness
+                </Button>
               </li>
 
               <li className="list-none">
-                <Link href="/">
-                  <Button className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize">
-                    Jewellery
-                  </Button>
-                </Link>
+                <Button
+                  className="!link  !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize"
+                  component={Link}
+                  href="/"
+                >
+                  Jewellery
+                </Button>
               </li>
             </ul>
           </div>
 
+          {/* Free International delivery section */}
           <div className="col_3 w-[20%] ">
             <p className="text-[15px] font-[500] flex items-center gap-3 mb-0 mt-0">
               <GoRocket className="text-[18px] " />
