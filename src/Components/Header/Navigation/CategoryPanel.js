@@ -35,6 +35,32 @@ export default function CategoryPanel(props) {
     }
   };
 
+  const categories = [
+    {
+      title: "Fashion",
+      subCategories: [
+        {
+          title: "Apparel",
+          items: [
+            "Smart Tablet",
+            "Crepe T-Shirt",
+            "Leather Watch",
+            "Rolling Diamond",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Electronics",
+      subCategories: [
+        {
+          title: "Mobiles",
+          items: ["Apple", "Samsung", "OPPO", "VIVO", "Techno"],
+        },
+      ],
+    },
+  ];
+
   const DrawerList = (
     <Box
       sx={{
@@ -56,8 +82,59 @@ export default function CategoryPanel(props) {
         />
       </h3>
 
+      {/* ----------------------practise Part start--------------------------- */}
       <div className="scroll">
-        {/* 1st Layer */}
+        <ul className="w-full relative">
+          {categories.map((category, categoryIndex) => (
+            <li
+              key={categoryIndex}
+              className="list-none flex items-center relative flex-col"
+            >
+              <Button
+                component={Link}
+                href="/"
+                className="w-full !text-left !justify-start px-3 !text-gray-700 !font-[500]"
+              >
+                {category.title}
+              </Button>
+
+              {subMenuIndex === categoryIndex ? (
+                <FaAngleUp
+                  className="absolute top-[10px] right-[15px] cursor-pointer "
+                  onClick={() => openSubMenu(categoryIndex)}
+                />
+              ) : (
+                <FaAngleDown
+                  className="absolute top-[10px] right-[15px] cursor-pointer"
+                  onClick={() => openSubMenu(categoryIndex)}
+                />
+              )}
+
+              {subMenuIndex === categoryIndex && (
+                <ul className="submenu  w-full px-3">
+                  {category.subCategories.map(
+                    (subCategory, subCategoryIndex) => (
+                      <li key={subCategoryIndex} className="list-none relative">
+                        <Button
+                          component={Link}
+                          href="/"
+                          className="w-full !text-left !justify-start px-3 !text-gray-700 !font-[500]"
+                        >
+                          {subCategory.title}
+                        </Button>
+                      </li>
+                    )
+                  )}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      {/* ----------------------paractise Part end--------------------------- */}
+
+      {/* ----------------------Tutorial Part start--------------------------- */}
+      {/* <div className="scroll">
         <ul className="w-full">
           <li className="list-none flex items-center relative flex-col">
             <Link href="/" className="w-full">
@@ -78,7 +155,6 @@ export default function CategoryPanel(props) {
               />
             )}
 
-            {/* 2nd Layer */}
             {subMenuIndex === 0 && (
               <ul className="submenu  w-full px-3">
                 <li className="list-none relative">
@@ -90,17 +166,16 @@ export default function CategoryPanel(props) {
 
                   {innerSubMenuIndex === 0 ? (
                     <FaAngleUp
-                      className="absolute top-[10px] right-[15px] cursor-pointer"
+                      className="absolute top-[10px] right-[15px] cursor-pointer !transition duration-300"
                       onClick={() => openInnerSubMenu(0)}
                     />
                   ) : (
                     <FaAngleDown
-                      className="absolute top-[10px] right-[15px] cursor-pointer"
+                      className="absolute top-[10px] right-[15px] cursor-pointer !transition duration-300"
                       onClick={() => openInnerSubMenu(0)}
                     />
                   )}
 
-                  {/* 3rd Layer */}
                   {innerSubMenuIndex === 0 && (
                     <ul className="inner_submenu w-full px-3">
                       <li className="list-none relative mb-1">
@@ -161,7 +236,6 @@ export default function CategoryPanel(props) {
               />
             )}
 
-            {/* 2nd Layer */}
             {subMenuIndex === 1 && (
               <ul className="submenu  w-full px-3">
                 <li className="list-none relative">
@@ -183,7 +257,6 @@ export default function CategoryPanel(props) {
                     />
                   )}
 
-                  {/* 3rd Layer */}
                   {innerSubMenuIndex === 1 && (
                     <ul className="inner_submenu  w-full px-3">
                       <li className="list-none relative mb-1">
@@ -225,7 +298,8 @@ export default function CategoryPanel(props) {
             )}
           </li>
         </ul>
-      </div>
+      </div> */}
+      {/* ----------------------Tutorial Part End--------------------------- */}
     </Box>
   );
 
@@ -239,4 +313,4 @@ export default function CategoryPanel(props) {
       </Drawer>
     </>
   );
-r
+}

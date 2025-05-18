@@ -16,6 +16,47 @@ export default function Navigation() {
     setIsOpenCategoryPanel(true);
   };
 
+  const navLinks = [
+    {
+      name: "Home",
+      href: "/",
+    },
+    {
+      name: "Fashion",
+      href: "/",
+      subCategories: [
+        {
+          name: "Men",
+          href: "/",
+          items: ["T-Shirt", "Jeans", "Footwear", "Watch", "Pants"],
+        },
+        {
+          name: "Women",
+          href: "/",
+        },
+        {
+          name: "Kids",
+          href: "/",
+        },
+        {
+          name: "Girls",
+          href: "/",
+        },
+        {
+          name: "Boys",
+          href: "/",
+        },
+      ],
+    },
+    { name: "Electronics", href: "/" },
+    { name: "Bags", href: "/" },
+    { name: "Footwear", href: "/" },
+    { name: "Groceries", href: "/" },
+    { name: "Beauty", href: "/" },
+    { name: "Wellness", href: "/" },
+    { name: "Jewellery", href: "/" },
+  ];
+
   return (
     <>
       <nav className="py-2">
@@ -32,8 +73,69 @@ export default function Navigation() {
             </Button>
           </div>
 
+          {/* ----------------------Practise Part start--------------------------- */}
+
+          <div className="col2 w-60%">
+            <ul className="flex items-center gap-5 nav">
+              {navLinks.map((link, linkIndex) => (
+                <li key={linkIndex} className="list-none relative group">
+                  <Button
+                    component={Link}
+                    href={link.href}
+                    className="!text-[15px] !font-semibold !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize"
+                  >
+                    {link.name}
+                  </Button>
+
+                  {link.subCategories && (
+                    <div className="submenu absolute top-[120%] left-[0%] min-w-[200px] bg-white shadow-md opacity-0 transition-all">
+                      <ul>
+                        {link.subCategories.map((sub, subIndex) => (
+                          <li key={subIndex} className="list-none w-full">
+                            <Button
+                              component={Link}
+                              href={sub.href}
+                              className=" !text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                            >
+                              {sub.name}
+                            </Button>
+
+                            {sub.items && (
+                              <div className="submenu absolute top-[0%] left-[100%] min-w-[200px] bg-white shadow-md opacity-0 transition-all">
+                                <ul>
+                                  {sub.items.map((item, itemIndex) => (
+                                    <li
+                                      key={itemIndex}
+                                      className="list-none w-full"
+                                    >
+                                      <Button
+                                        className=" !text-gray-700 w-full !text-left !justify-start !font-semibold !rounded-none"
+                                        component={Link}
+                                        href="/"
+                                      >
+                                        {item}
+                                      </Button>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ----------------------Practise Part End--------------------------- */}
+
+          {/* ----------------------Tutorial Part start--------------------------- */}
+
           {/* Drop down Nav bar section */}
-          <div className="col_2 w-[60%]">
+          {/* <div className="col_2 w-[60%]">
             <ul className="flex items-center gap-5 nav">
               <li className="list-none">
                 <Button className=" !text-[15px] !font-semibold  !text-gray-700 hover:!text-[#ff5252] hover:!transition hover:!duration-200 !capitalize">
@@ -229,7 +331,9 @@ export default function Navigation() {
                 </Button>
               </li>
             </ul>
-          </div>
+          </div> */}
+
+          {/* --------------------Tutorial part End----------------------- */}
 
           {/* Free International delivery section */}
           <div className="col_3 w-[20%] ">
