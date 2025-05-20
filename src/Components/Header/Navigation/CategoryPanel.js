@@ -122,6 +122,34 @@ export default function CategoryPanel(props) {
                         >
                           {subCategory.title}
                         </Button>
+
+                        {innerSubMenuIndex === subCategoryIndex ? (
+                          <FaAngleUp
+                            className="absolute top-[10px] right-[15px] cursor-pointer"
+                            onClick={() => openInnerSubMenu(subCategoryIndex)}
+                          />
+                        ) : (
+                          <FaAngleDown
+                            className="absolute top-[10px] right-[15px] cursor-pointer"
+                            onClick={() => openInnerSubMenu(subCategoryIndex)}
+                          />
+                        )}
+
+                        {innerSubMenuIndex === subCategoryIndex && (
+                          <ul className="inner_submenu w-full px-3">
+                            {subCategory.items.map((item, itemIndex) => (
+                              <li key={itemIndex}>
+                                <Button
+                                  component={Link}
+                                  href="/"
+                                  className="w-full !text-left !justify-start px-3 !text-gray-700 !font-[500]"
+                                >
+                                  {item}
+                                </Button>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </li>
                     )
                   )}
